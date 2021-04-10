@@ -1,0 +1,3 @@
+filetemplate: hemi%01d.f%05d
+firsttimestep: 1
+numtimesteps: 20

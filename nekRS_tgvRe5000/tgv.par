@@ -1,0 +1,37 @@
+[OCCA]
+backend = Serial
+deviceNumber = LOCAL-RANK
+
+[GENERAL]
+polynomialOrder = 9
+#startFrom = restart.fld
+stopAt = endTime
+endTime = 10
+verbose = yes
+dealiasing = no
+
+dt = 5.0e-4
+timeStepper = bdf3
+#extrapolation = subCycling
+#subCyclingSteps = 1
+
+writeControl = runTime
+writeInterval = 1
+
+#filtering = hpfrt
+#filterWeight = 2
+#filterModes = 1
+
+[MESH]
+partitioner = rsb
+
+[PRESSURE]
+residualTol = 1e-09
+preconditioner = multigrid+additive+asm
+
+[VELOCITY]
+solver = cg+block
+boundaryTypeMap = none
+density = 1.0
+viscosity = -5000
+residualTol = 1e-09

@@ -1,0 +1,35 @@
+[OCCA]
+backend = serial
+deviceNumber = LOCAL-RANK
+
+[GENERAL] 
+polynomialOrder = 9
+#startFrom = restart.fld
+stopAt = endTime
+endTime = 20
+verbose = yes
+
+dt = 1e-3
+timeStepper = tombo3
+#extrapolation = subCycling
+#subCyclingSteps = 1
+
+writeControl = runTime
+writeInterval = 20
+
+#filtering = hpfrt 
+#filterWeight = 8
+#filterModes = 1
+
+[MESH]
+partitioner = rsb
+
+[PRESSURE]
+residualTol = 1e-06
+preconditioner = multigrid+additive+asm
+
+[VELOCITY]
+boundaryTypeMap = inlet, outlet, wall, slipY, slipZ
+residualTol = 1e-08
+density = 1.0
+viscosity = -1400

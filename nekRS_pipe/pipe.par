@@ -1,0 +1,35 @@
+#
+# nek parameter file
+#
+[OCCA]
+backend = Serial
+deviceNumber = LOCAL-RANK
+
+[GENERAL]
+polynomialOrder = 7
+verbose = yes
+dealiasing = no
+
+stopAt = endTime
+endTime = 30.0
+
+dt = 1e-3
+timeStepper = bdf3
+dealiasing = no
+
+writeControl = runTime
+writeInterval = 1
+
+[MESH]
+partitioner = RSB
+
+[PRESSURE]
+residualTol = 1e-07
+residualProj = yes
+preconditioner = multigrid+additive+asm
+
+[VELOCITY]
+solver = pcg+block
+density = 1.
+viscosity = -2650
+residualTol = 1e-9

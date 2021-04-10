@@ -1,0 +1,29 @@
+#
+# nek parameter file
+#
+[GENERAL] 
+stopAt = endTime
+endTime = 30.0
+
+dt = -1e-3
+timeStepper = bdf3
+dealiasing = no
+
+writeControl = runTime
+writeInterval = 1
+
+[MESH]
+numberOfBCFields = 1
+partitioner = RSB
+
+[PROBLEMTYPE]
+equation = incompNS
+
+[PRESSURE]
+residualTol = 1e-07
+residualProj = yes
+
+[VELOCITY]
+density = 1.
+viscosity = -2650
+residualTol = 1e-9
