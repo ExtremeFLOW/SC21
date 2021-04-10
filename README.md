@@ -1,7 +1,7 @@
 # ExtremeFLOW test-suite
 This is a test-suite for benchmarking and verification of high-order spectral element based flow solvers.
 
-It currently consinst of:
+It currently consists of:
 
 * Turbulent pipe flow, Re_\tau=180 [1]
 * Taylor-Green vortex, Re=1600 and Re=5000
